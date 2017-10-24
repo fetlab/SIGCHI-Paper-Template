@@ -1,0 +1,53 @@
+\documentclass{sigchi}
+\input{preamble}
+
+\begin{document}
+\title{\plaintitle}
+
+\numberofauthors{2}
+\author{
+    \alignauthor{1st Author Name\\
+    \affaddr{Rochester Institute of Technology}\\
+    \affaddr{Rochester, NY, US}\\
+    \email{e-mail address}}\\
+    %
+    \alignauthor{2nd Author Name\\
+    \affaddr{Rochester Institute of Technology}\\
+    \affaddr{Rochester, NY, US}\\
+    \email{e-mail address}}\\
+}
+
+\teaser
+{%
+    \centering
+    \subfloat[]{\label{fig:fig}\includegraphics[height=.197\textwidth]{example-image-a}} \quad
+    \subfloat[]{\label{fig:apricot}\includegraphics[height=.197\textwidth]{example-image-b}} \quad
+    \subfloat[]{\label{fig:whales}\includegraphics[height=.197\textwidth]{example-image-c}}
+    \caption{Here's a teaser.}%
+    \label{fig:teaser}%
+}
+
+
+\maketitle
+
+\begin{abstract}
+    An abstract abstract.
+\end{abstract}
+
+\category{H.5.3.}{}{}\category{}{}{}
+\keywords{\plainkeywords}
+
+\section{Introduction}
+
+\section{Related Work}
+    
+\section{Conclusion}
+
+\section{Acknowledgement}
+    Left blank for blind review.
+    %Remember to add NSF, HP support here; thank undergrads
+
+\bibliographystyle{SIGCHI-Reference-Format}
+\bibliography{papers}
+
+\end{document}

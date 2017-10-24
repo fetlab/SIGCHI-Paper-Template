@@ -1,0 +1,87 @@
+%Everything here shouldn't really change between documents
+\usepackage{balance}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[space]{grffile}
+\usepackage[T1]{fontenc}
+\usepackage{txfonts}
+\usepackage{xspace}
+\usepackage{mathptmx}                    % Comment if you want LaTeX's default font
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{textcomp}
+\usepackage{microtype}                   % Improved Tracking and Kerning 
+\usepackage{ccicons}
+\usepackage[caption=false]{subfig}
+\usepackage[nameinlink]{cleveref}
+\usepackage[nocompress]{cite}            %numerical order in citations
+\usepackage{verbatim}                    %for \begin{comment}/\end{comment}
+\usepackage[utf8]{inputenc}              %Allow symbols like °
+\usepackage{cuted}
+\usepackage{capt-of}
+\usepackage{wrapfig}
+\usepackage{todonotes}
+
+%Highlight todo; soul package has bugs so we do this instead
+\usepackage[normalem]{ulem}
+\newcommand\hl{\bgroup\markoverwith
+  {\textcolor{yellow}{\rule[-.5ex]{.1pt}{2.5ex}}}\ULon}
+\newcommand{\fix}[2]{\hl{#1}\todo[color=yellow]{#2}\xspace}
+
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\etal}{et~al.\@\xspace}
+
+%Comment out for camera-ready
+\pagenumbering{arabic}
+
+%Properly format cleverrefs
+\crefname{figure}{Figure}{Figures}
+\crefname{table}{Table}{Tables}
+\crefname{equation}{Equation}{Equations}
+%For referencing footnotes twice
+\crefformat{footnote}{#2\footnotemark[#1]#3}
+\creflabelformat{equation}{#2#1#3}
+
+% llt: Define a global style for URLs, rather than the default one
+\makeatletter
+\def\url@leostyle{%
+\@ifundefined{selectfont}{
+\def\UrlFont{\sf}
+}{
+\def\UrlFont{\small\bf\ttfamily}
+}}
+\makeatother
+\urlstyle{leo}
+
+% To make various LaTeX processors do the right thing with page size.
+\def\pprw{8.5in}
+\def\pprh{11in}
+\special{papersize=\pprw,\pprh}
+\setlength{\paperwidth}{\pprw}
+\setlength{\paperheight}{\pprh}
+\setlength{\pdfpagewidth}{\pprw}
+\setlength{\pdfpageheight}{\pprh}
+
+%Settings should come here so that the below definitions in \hypersetup can come from it
+\input{settings}
+
+% Make sure hyperref comes last of your loaded packages, to give it a
+% fighting chance of not being over-written, since its job is to
+% redefine many LaTeX commands.
+\definecolor{linkColor}{RGB}{6,125,233}
+\hypersetup{%
+	pdftitle={\plaintitle},
+	% Use \plainauthor for final version.
+	%pdfauthor={\plainauthor},
+	pdfauthor={\emptyauthor},
+	pdfkeywords={\plainkeywords}, 
+	bookmarksnumbered,
+	pdfstartview={FitH},
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=linkColor,
+	breaklinks=true,
+}
